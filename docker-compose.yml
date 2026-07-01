@@ -24,12 +24,11 @@ services:
       DELETE: 1
       # Everything else is denied by default (AUTH, SECRETS, NETWORKS, PLUGINS, SWARM, TASKS, SERVICES, CONFIGS, NODES, DISTRIBUTIONS)
     labels:
-      labels:
-        - 'com.openwa.service=api'
-        - 'com.openwa.core=true'
-        - 'traefik.enable=true'
-        - 'traefik.docker.network=naa9r19bdhcu10v5xa62r39j'
-        - 'traefik.http.services.openwa-api.loadbalancer.server.port=2785'
+      - 'com.openwa.service=api'
+      - 'com.openwa.core=true'
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=naa9r19bdhcu10v5xa62r39j'
+      - 'traefik.http.services.openwa-api.loadbalancer.server.port=2785'
 
   # ===== CORE: OpenWA Backend API =====
   openwa-api:
