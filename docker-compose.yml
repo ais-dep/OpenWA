@@ -27,8 +27,7 @@ services:
       - 'com.openwa.service=api'
       - 'com.openwa.core=true'
       - 'traefik.enable=true'
-      - 'traefik.docker.network=naa9r19bdhcu10v5xa62r39j'
-      - 'traefik.http.services.openwa-api.loadbalancer.server.port=2785'
+
 
   # ===== CORE: OpenWA Backend API =====
   openwa-api:
@@ -173,6 +172,9 @@ services:
     labels:
       - 'com.openwa.service=api'
       - 'com.openwa.core=true'
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=naa9r19bdhcu10v5xa62r39j'
+      - 'traefik.http.services.openwa-api.loadbalancer.server.port=2785'
 
   # The dashboard SPA is now bundled into the openwa-api image and served by NestJS on the
   # same port (2785) — there is no separate dashboard container. Reach it at the openwa-api
